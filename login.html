@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
+
+body {
+  background: #f7f8fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.btn {
+  width: 100%;
+  background: #111;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.link {
+  margin-top: 20px;
+  text-align: center;
+  color: #666;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<div class="title">
+Client Login
+</div>
+
+<input
+  class="input"
+  id="email"
+  type="email"
+  placeholder="Email"
+/>
+
+<input
+  class="input"
+  id="password"
+  type="password"
+  placeholder="Password"
+/>
+
+<button class="btn" onclick="login()">
+Login
+</button>
+
+<div class="link">
+Access your AI Dashboard
+</div>
+
+</div>
+
+<script>
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (!email || !password) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  localStorage.setItem("clientEmail", email);
+
+  window.location.href = "/dashboard.html";
+}
+</script>
+
+</body>
+</html>

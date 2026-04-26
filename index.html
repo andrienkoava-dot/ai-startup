@@ -1,245 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Recommendation Engine</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VLAN — AI Revenue Engine</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Inter, Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
 
-    body {
-      background: #ffffff;
-      color: #111;
-      line-height: 1.6;
-    }
+body {
+  background: #f7f8fa;
+  color: #111;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    header {
-      padding: 30px 0;
-      border-bottom: 1px solid #eee;
-    }
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
 
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-    }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
 
-    .hero {
-      padding: 100px 0;
-      text-align: center;
-    }
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+}
 
-    .hero h1 {
-      font-size: 58px;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      font-weight: 800;
-    }
+.nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
 
-    .hero p {
-      font-size: 22px;
-      color: #666;
-      max-width: 800px;
-      margin: auto;
-      margin-bottom: 40px;
-    }
+.nav a {
+  font-size: 15px;
+  color: #444;
+}
 
-    .btn {
-      display: inline-block;
-      background: #111;
-      color: white;
-      padding: 18px 36px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-    }
+.btn {
+  background: #111;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 14px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
 
-    .section {
-      padding: 90px 0;
-    }
+.btn-light {
+  background: #f1f1f1;
+  color: #111;
+}
 
-    .section-title {
-      font-size: 42px;
-      margin-bottom: 20px;
-      font-weight: 700;
-      text-align: center;
-    }
+.hero {
+  text-align: center;
+  padding: 80px 0;
+}
 
-    .section-subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 60px;
-      font-size: 20px;
-    }
+.hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
+.hero-subtitle {
+  font-size: 20px;
+  color: #666;
+  max-width: 760px;
+  margin: auto;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
 
-    .card {
-      padding: 30px;
-      border: 1px solid #eee;
-      border-radius: 18px;
-      background: #fafafa;
-    }
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
-    .card h3 {
-      margin-bottom: 15px;
-      font-size: 22px;
-    }
+.section {
+  margin-top: 100px;
+}
 
-    .pricing {
-      text-align: center;
-    }
+.section-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
 
-    .price {
-      font-size: 48px;
-      font-weight: 800;
-      margin: 20px 0;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 24px;
+}
 
-    footer {
-      padding: 50px 0;
-      text-align: center;
-      border-top: 1px solid #eee;
-      color: #777;
-    }
-  </style>
+.card {
+  background: white;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.card-text {
+  color: #666;
+  line-height: 1.7;
+}
+
+.footer {
+  margin-top: 100px;
+  padding: 50px 0;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+</style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <div class="logo">
-      AI Recommendation Engine
-    </div>
+<div class="container">
+
+<div class="header">
+  <div class="logo">
+    VLAN
   </div>
-</header>
 
-<section class="hero">
-  <div class="container">
-    <h1>
-      Increase Revenue<br>
-      with AI Recommendations
-    </h1>
-
-    <p>
-      Automatically detect user intent, location and page category —
-      then show the highest-converting recommendation in real time.
-    </p>
-
-    <a href="#" class="btn">
-      Start Free Trial
-    </a>
+  <div class="nav">
+    <a href="/login.html">Login</a>
+    <a href="/register.html">Register</a>
+    <a href="/checkout.html">Pricing</a>
+    <a href="/privacy-policy.html">Privacy</a>
+    <a href="/terms-of-service.html">Terms</a>
+    <a href="/cookie-policy.html">Cookies</a>
   </div>
-</section>
+</div>
 
-<section class="section">
-  <div class="container">
-    <div class="section-title">
-      Why Businesses Use This
-    </div>
+<div class="hero">
 
-    <div class="section-subtitle">
-      More clicks. More bookings. More revenue.
-    </div>
+<div class="hero-title">
+AI Revenue Engine<br>
+for Modern Business
+</div>
 
-    <div class="grid">
-      <div class="card">
-        <h3>AI Intent Detection</h3>
-        <p>
-          Understand what users want before they click.
-        </p>
-      </div>
+<div class="hero-subtitle">
+Increase conversions, automate recommendations, optimize revenue
+and scale recurring subscriptions with enterprise-grade AI infrastructure.
+</div>
 
-      <div class="card">
-        <h3>Geo + Language Detection</h3>
-        <p>
-          Personalized recommendations for every visitor.
-        </p>
-      </div>
+<div class="hero-buttons">
+  <a href="/register.html" class="btn">
+    Start Free Setup
+  </a>
 
-      <div class="card">
-        <h3>Conversion Optimization</h3>
-        <p>
-          Show the best monetizing option automatically.
-        </p>
-      </div>
-    </div>
+  <a href="/checkout.html" class="btn btn-light">
+    View Pricing
+  </a>
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="section-title">
+Why Companies Choose VLAN
+</div>
+
+<div class="grid">
+
+<div class="card">
+  <div class="card-title">
+    AI Recommendation Engine
   </div>
-</section>
 
-<section class="section pricing">
-  <div class="container">
-    <div class="section-title">
-      Pricing
-    </div>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>Starter</h3>
-        <div class="price">$99/mo</div>
-        <p>
-          Small websites and MVP launches
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Growth</h3>
-        <div class="price">$299/mo</div>
-        <p>
-          High-converting businesses and marketplaces
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Enterprise</h3>
-        <div class="price">Custom</div>
-        <p>
-          White-label AI infrastructure for large companies
-        </p>
-      </div>
-
-    </div>
+  <div class="card-text">
+    Automatically increase revenue with intelligent recommendations,
+    trust signals, and conversion optimization widgets.
   </div>
-</section>
+</div>
 
-<section class="section">
-  <div class="container" style="text-align:center;">
-    <div class="section-title">
-      Ready to Increase Revenue?
-    </div>
-
-    <p style="font-size:20px; margin-bottom:30px; color:#666;">
-      Deploy in minutes. Monetize immediately.
-    </p>
-
-    <a href="#" class="btn">
-      Book Demo
-    </a>
+<div class="card">
+  <div class="card-title">
+    Stripe Subscription System
   </div>
-</section>
 
-<footer>
-  <div class="container">
-    © 2026 AI Recommendation Engine — Built for Scale
+  <div class="card-text">
+    Real recurring billing, invoices, billing portal,
+    upgrades, downgrades and subscription automation.
   </div>
-</footer>
+</div>
+
+<div class="card">
+  <div class="card-title">
+    Enterprise Dashboard
+  </div>
+
+  <div class="card-text">
+    Protected analytics dashboard with billing access,
+    revenue metrics and widget deployment management.
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="section-title">
+Built for Serious SaaS Growth
+</div>
+
+<div class="grid">
+
+<div class="card">
+  <div class="card-title">
+    GDPR + EU Compliance
+  </div>
+
+  <div class="card-text">
+    Legal-ready platform with Privacy Policy,
+    Terms of Service, Cookie Policy and consent systems.
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">
+    Production Infrastructure
+  </div>
+
+  <div class="card-text">
+    Backend deployed on Render,
+    frontend on Vercel,
+    billing powered by Stripe.
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">
+    Scalable Revenue Model
+  </div>
+
+  <div class="card-text">
+    Designed for recurring MRR growth,
+    retention optimization and serious long-term SaaS expansion.
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+VLAN © 2025 • Enterprise AI Revenue Platform • Poland / EU Compliant
+</div>
+
+</div>
 
 </body>
 </html>
